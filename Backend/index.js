@@ -1,4 +1,6 @@
 const express = require("express");
+const path=require('path')
+const _dirname=path.resolve()
 const dbconnect = require("./Config/Database");
 const router = require("./Route/PostRoute");
 const app=express()
@@ -15,4 +17,8 @@ app.get('/',(req,res)=>{
 
 })
 app.use('/api/v1',router)
+app.use(express.static(path.join(_dirname,"FrontEndG/dist")))
+app.get("*",(req,res)=>{
+  res.sendFile(path.resolve(_dirname,"FrontEndG","dist","index.html"))
+})
 dbconnect()
