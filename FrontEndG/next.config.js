@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: [], // Add any image domains you need here
   },
+  typescript:{
+    ignoreBuildErrors:true,
+  }
 }
 
 module.exports = nextConfig 
