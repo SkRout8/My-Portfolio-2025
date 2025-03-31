@@ -7,7 +7,7 @@ const app=express()
 const cors=require('cors')
 const PORT=process.env.PORT||4000
 require('dotenv').config()
-app.use(cors({origin:"http://localhost:3000", credential:true}))
+app.use(cors({origin:"https://shashikanta-portfolio.vercel.app/", credential:true}))
 app.use(express.json())
 app.listen(PORT,()=>{
 console.log(`App Connected At ${PORT}`)
